@@ -137,4 +137,29 @@ body {
     gap: 10px;
   }
 }
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to elements */
+.greeting {
+  animation: fadeInUp 1s ease-out;
+}
+
+.name {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.description {
+  animation: fadeInUp 2s ease-out;
+}
+
 
