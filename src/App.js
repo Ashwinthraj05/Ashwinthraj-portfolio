@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import Blog from "./Blog.js";
 function App() {
   return (
     <>
