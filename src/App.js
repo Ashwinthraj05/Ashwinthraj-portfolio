@@ -13,29 +13,29 @@ function App() {
         <div className="container">
           <motion.h2
             className="greeting"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.6)", opacity: 0, y: 30 }}
+            animate={{ textShadow: "none", opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
           >
             Hey, I'M
           </motion.h2>
-          
+
           <motion.h1
             className="name"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5 }}
+            initial={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.6)", opacity: 0, y: 30 }}
+            animate={{ textShadow: "none", opacity: 1, y: 0 }}
+            transition={{ duration: 2, ease: "easeOut" }}
           >
             SG ASHWINTH
           </motion.h1>
 
           <motion.p
             className="description"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2 }}
+            initial={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.6)", opacity: 0, y: 30 }}
+            animate={{ textShadow: "none", opacity: 1, y: 0 }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
           >
-            A Backend focused Web Developer building the Frontend of Websites & Web
+            A Frontend focused Web Developer building the Frontend of Websites & Web
             Applications that leads to the success of the overall project
           </motion.p>
         </div>
