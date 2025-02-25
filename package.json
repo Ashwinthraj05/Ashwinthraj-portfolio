@@ -13,7 +13,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-   "homepage":"https://ashwinthraj-portfolio.github.io/ashwinthraj-portfolio",
+   "homepage":"https://Ashwinthraj05.github.io/ashwinthraj-portfolio",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
