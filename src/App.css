@@ -161,5 +161,78 @@ body {
 .description {
   animation: fadeInUp 2s ease-out;
 }
+.about-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-container h2 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-top: 20px;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.about-container strong {
+  color: #007bff;
+}
+
+.about-list {
+  text-align: left;
+  list-style-type: square;
+  margin: 10px auto;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.about-list li {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+  }
+  .about-container {
+    display: block; /* Ensure it's visible */
+    color: white;   /* Change based on theme */
+  }
+  /* About{
+    background-color: black;
+  } */
+}
+
 
 
