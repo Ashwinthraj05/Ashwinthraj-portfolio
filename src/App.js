@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
-import NavBar from "./NavBar";  // Import NavBar
 import Blog from "./Blog.js";
 import About from "./About.js";
-
+import Education from "./Education.js";
 function App() {
   return (
-    <Router  basename="/Ashwinthraj-portfolio"> 
+   <>
+   <Router  basename="/Ashwinthraj-portfolio"> 
       {/* ✅ Navbar should be inside Router but outside Routes */}
       {/* {<NavBar /> */} 
 
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={
           <div className="App">
             <Blog />
+            
             <div className="container">
               <motion.h2
                 className="greeting"
@@ -46,11 +47,17 @@ function App() {
             </div>
           </div>
         } />
+       
 
         {/* ✅ Route for About Page */}
         <Route exact path="/about" element={<About />} />
       </Routes>
     </Router>
+    
+    <div>
+     <Education/>
+     </div>
+     </>
   );
 }
 
