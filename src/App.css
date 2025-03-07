@@ -1,22 +1,35 @@
+/* Global Styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
 /* Navigation Bar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  background: black;
   padding: 15px 30px;
   color: white;
+  border-radius: 10px;
 }
 
+/* Navbar Logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
 
+/* Navbar Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
@@ -26,6 +39,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 5px 10px;
   transition: 0.3s;
 }
 
@@ -33,28 +47,33 @@
   color: #ffcc00;
 }
 
+/* Navbar Icons - Fixed Size & Responsive */
 .icon {
-  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Responsive Design */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .nav-links {
     flex-direction: column;
     gap: 10px;
   }
-}
-/* Global Styling */
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  color: #333;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
 }
 
 /* Center Content */
@@ -87,57 +106,7 @@ body {
   margin: 0 auto;
 }
 
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: black;
-  padding: 15px 30px;
-  color: white;
-  border-radius: 10px;
-}
-
-/* Navbar Logo */
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* Navbar Links */
-.nav-links {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  padding: 5px 15px;
-  border: 1px solid white;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.nav-item:hover {
-  background: white;
-  color: black;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-/* Fade-in and slide-up animation */
+/* Fade-in and Slide-up Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -149,7 +118,7 @@ body {
   }
 }
 
-/* Apply animation to elements */
+/* Apply Animation */
 .greeting {
   animation: fadeInUp 1s ease-out;
 }
@@ -161,6 +130,8 @@ body {
 .description {
   animation: fadeInUp 2s ease-out;
 }
+
+/* About Section */
 .about-container {
   max-width: 800px;
   margin: 50px auto;
@@ -189,10 +160,6 @@ body {
   line-height: 1.6;
 }
 
-.about-container strong {
-  color: #007bff;
-}
-
 .about-list {
   text-align: left;
   list-style-type: square;
@@ -207,7 +174,7 @@ body {
   margin: 5px 0;
 }
 
-/* Responsive Design */
+/* Responsive About Section */
 @media (max-width: 768px) {
   .about-container {
     width: 90%;
@@ -225,15 +192,7 @@ body {
   .about-container p {
     font-size: 1rem;
   }
-  .about-container {
-    display: block; /* Ensure it's visible */
-    color: white;   /* Change based on theme */
-  }
-  /* About{
-    background-color: black;
-  } */
 }
-
 
 /* Education Section */
 .title {
@@ -241,8 +200,8 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
-  text-align: center; /* Ensures text is centered */
-  width: 100%; /* Makes sure it takes full width */
+  text-align: center;
+  width: 100%;
 }
 
 .education-table {
@@ -257,7 +216,8 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.education-table th, .education-table td {
+.education-table th,
+.education-table td {
   padding: 15px;
   border-bottom: 1px solid #ddd;
 }
@@ -271,7 +231,7 @@ body {
   background: #ddd;
 }
 
-/*Skill-Section*/
+/* Skills Section */
 .skills-section {
   text-align: center;
   padding: 50px 20px;
@@ -331,4 +291,11 @@ body {
 
 .skill-percentage {
   font-size: 0.9rem;
+}
+
+/* Responsive Skills Section */
+@media (max-width: 768px) {
+  .skills-container {
+    width: 90%;
+  }
 }
