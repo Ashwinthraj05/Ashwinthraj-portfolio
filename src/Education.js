@@ -1,24 +1,32 @@
 import React from 'react';
-import './App.css'; // Ensure styles are applied
+import './App.css';
 
 function Education() {
   return (
     <section id="education" className="education-section">
-      <h2>Education</h2>
-
-      <div className="education-card">
-        <h3>Bachelor of Technology in Computer Science</h3>
-        <p><strong>Anna University</strong></p>
-        <p>2022 - 2026</p>
-        <p>Key Subjects: Data Structures, Web Development, AI & ML, Databases</p>
-      </div>
-
-      <div className="education-card">
-        <h3>High School</h3>
-        <p><strong>ABC Senior Secondary School</strong></p>
-        <p>2020 - 2022</p>
-        <p>Subjects: Mathematics, Physics, Chemistry, Computer Science</p>
-      </div>
+      <h2 className="title">Education</h2>
+      
+      <table className="education-table">
+        <thead>
+          <tr>
+            <th>Degree</th>
+            <th>Institution</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B.Tech in Computer Science</td>
+            <td>Anna University</td>
+            <td>2022 - 2026</td>
+          </tr>
+          <tr>
+            <td>High School</td>
+            <td>ABC Senior Secondary School</td>
+            <td>2020 - 2022</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   );
 }

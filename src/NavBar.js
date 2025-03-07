@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FaHome, FaEnvelope, FaInstagram, FaGithub , FaAbout} from "react-icons/fa";
+import { FaHome, FaEnvelope, FaInstagram, FaGithub , FaToolbox} from "react-icons/fa";
 import { FaInfoCircle, FaUser } from "react-icons/fa";
 import "./App.css";
 
@@ -12,18 +12,18 @@ function NavBar() {
       <ul className="nav-links">
         <li>
           <a href="/" className="nav-item">
-            <FaHome  /> Home
+            <FaHome  /> 
           </a>
         </li>
         <li>
-  <Link to="/about" className="nav-item">About</Link>
+  <Link to="/about" className="nav-item"><FaToolbox/></Link>
 </li>
         <li>
           <Link to="https://www.instagram.com/x..ashwinthz..x?igsh=MXRnZ3gxcHlwYWhzbw==" 
              target="_blank" 
              rel="noopener noreferrer" 
              className="nav-item">
-            <FaInstagram className="icon" /> Instagram
+            <FaInstagram className="icon" /> 
           </Link>
         </li>
         <li>
@@ -31,12 +31,12 @@ function NavBar() {
              target="_blank" 
              rel="noopener noreferrer" 
              className="nav-item">
-            <FaGithub className="icon" /> GitHub
+            <FaGithub className="icon" /> 
           </Link>
         </li>
         <li>
           <Link to="/contact" className="nav-item">
-            <FaEnvelope className="icon" /> Contact
+            <FaEnvelope className="icon" /> 
           </Link>
         </li>
       </ul>

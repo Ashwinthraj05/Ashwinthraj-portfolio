@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Blog from "./Blog.js";
 import About from "./About.js";
 import Education from "./Education.js";
+import Skills from "./Skills";
+
 function App() {
   return (
    <>
@@ -56,6 +58,9 @@ function App() {
     
     <div>
      <Education/>
+     </div>
+     <div>
+     <Skills/>
      </div>
      </>
   );

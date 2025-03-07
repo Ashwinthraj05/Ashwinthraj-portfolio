@@ -234,46 +234,101 @@ body {
   } */
 }
 
-/*EDUCATION*/
-.education-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
 
+/* Education Section */
 .title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
+  text-align: center; /* Ensures text is centered */
+  width: 100%; /* Makes sure it takes full width */
 }
 
-.education-container {
+.education-table {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.education-table th, .education-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.education-table th {
+  background: black;
+  color: white;
+}
+
+.education-table tr:hover {
+  background: #ddd;
+}
+
+/*Skill-Section*/
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.skills-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-
-.education-card {
-  background: white;
-  padding: 20px;
-  margin: 15px;
+  gap: 20px;
   width: 80%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid transparent;
-  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 600px;
+  margin: auto;
 }
 
-.education-card:hover {
-  transform: scale(1.05);
-  border: 2px solid black; /* Black border glow */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); /* Black glowing effect */
+.skill {
+  width: 100%;
+  text-align: left;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.skill-bar {
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-percentage {
+  font-size: 0.9rem;
 }
