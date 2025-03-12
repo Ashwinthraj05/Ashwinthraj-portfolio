@@ -1,165 +1,296 @@
-/* Global Styling */
+/* General Styles */
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navigation Bar Styling */
+/* Dark Theme (Default) */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Navbar */
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between name & nav items */
   align-items: center;
-  background: black;
   padding: 15px 30px;
-  color: white;
-  border-radius: 10px;
+  background-color: black; /* Always black */
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Navbar Logo */
+/* Keep Navbar Black in Both Themes */
+body.light .navbar {
+  background-color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Left Side (Name) */
 .logo {
   font-size: 24px;
   font-weight: bold;
+  color: white;
+}
+
+/* Navbar Right Side (Navigation Links & Theme Toggle) */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Equal spacing */
 }
 
 /* Navbar Links */
 .nav-links {
+  display: flex;
   list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
+  gap: 25px;
   margin: 0;
+  padding: 0;
 }
 
-.nav-item {
-  text-decoration: none;
+.nav-links li {
+  display: flex;
+  align-items: center;
+  position: relative; /* For hover text */
+}
+
+/* Navbar Icons */
+.nav-links a {
   color: white;
-  font-size: 18px;
+  text-decoration: none;
+  font-size: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* Keep Icons White in Light Mode */
+body.light .nav-links a {
+  color: white;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  color: #1db954;
+}
+
+/* Hover Tooltip */
+.nav-links a::after {
+  content: attr(data-tooltip); /* Get text from "data-tooltip" attribute */
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   padding: 5px 10px;
-  transition: 0.3s;
+  font-size: 14px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-.nav-item:hover {
-  color: #ffcc00;
+/* Hover Tooltip in Light Mode */
+body.light .nav-links a::after {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
 }
 
-/* Navbar Icons - Fixed Size & Responsive */
-.icon {
-  width: 24px;
-  height: 24px;
-  font-size: 24px;
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  font-size: 24px; /* Same size as other icons */
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
 }
 
-/* Responsive Navbar */
+body.light .theme-toggle {
+  color: white; /* Keep white in both themes */
+}
+
+/* Hover Effect */
+.theme-toggle:hover {
+  color: #1db954;
+}
+
+/* Hover Tooltip for Theme Toggle */
+.theme-toggle::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+body.light .theme-toggle::after {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+.theme-toggle:hover::after {
+  opacity: 1;
+}
+
+
+
+
+/* Main Content */
+/* Hero Section Layout */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align left and right */
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 80px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Left side content */
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+/* Right side image */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Push image to the right */
+}
+
+/* Profile Image */
+.profile-image {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: glowing 2s infinite alternate;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glowing animation */
+@keyframes glowing {
+  0% { box-shadow: 0 0 10px #ff00ff; }
+  50% { box-shadow: 0 0 20px #00ffff; }
+  100% { box-shadow: 0 0 10px #ff00ff; }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
+  .hero-section {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
+  .hero-content {
+    text-align: center;
   }
 
-  .icon {
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
+  .hero-image-container {
+    justify-content: center;
+    margin-top: 20px;
   }
-}
-
-/* Center Content */
-.container {
-  text-align: center;
-  width: 90%;
-  max-width: 900px;
-  margin: 100px auto;
-}
-
-/* Greeting */
-.greeting {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-/* Name Styling */
-.name {
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-/* Description */
-.description {
-  font-size: 18px;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Fade-in and Slide-up Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apply Animation */
-.greeting {
-  animation: fadeInUp 1s ease-out;
-}
-
-.name {
-  animation: fadeInUp 1.5s ease-out;
-}
-
-.description {
-  animation: fadeInUp 2s ease-out;
 }
 
 /* About Section */
+/* About Container */
 .about-container {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
+  background: #fff; /* Light Mode */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+body.dark .about-container {
+  background: #1e1e1e; /* Dark Mode */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Headings */
 .about-container h1 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+body.dark .about-container h1 {
+  color: #ffffff; /* White in Dark Mode */
 }
 
 .about-container h2 {
   font-size: 1.8rem;
-  color: #444;
+  color: #444444;
   margin-top: 20px;
+  transition: color 0.3s ease-in-out;
 }
 
+body.dark .about-container h2 {
+  color: #cccccc; /* Lighter Gray in Dark Mode */
+}
+
+/* Paragraph */
 .about-container p {
   font-size: 1.2rem;
   color: #666;
   line-height: 1.6;
+  transition: color 0.3s ease-in-out;
 }
 
+body.dark .about-container p {
+  color: #bbbbbb; /* Soft Gray in Dark Mode */
+}
+
+/* About List */
 .about-list {
   text-align: left;
   list-style-type: square;
@@ -172,6 +303,11 @@ body {
   font-size: 1.2rem;
   color: #666;
   margin: 5px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+body.dark .about-list li {
+  color: #bbbbbb; /* Light Gray in Dark Mode */
 }
 
 /* Responsive About Section */
@@ -195,107 +331,145 @@ body {
 }
 
 /* Education Section */
+/* Ensure the table takes up a reasonable width */
+/* Center the title */
 .title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--table-text); /* Adapts to theme */
   text-align: center;
   width: 100%;
+  display: flex;
+  justify-content: center; /* Ensures proper centering */
+  align-items: center;
 }
 
 .education-table {
-  width: 80%;
-  max-width: 600px;
+  width: 90%;  /* Increase width */
+  max-width: 800px;  /* Adjust maximum size */
+  min-width: 600px;  /* Prevent it from becoming too narrow */
   margin: 20px auto;
   border-collapse: collapse;
   text-align: center;
-  background: white;
+  background: var(--table-bg);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Table Header & Cell Fix */
 .education-table th,
 .education-table td {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+  padding: 20px;  /* Increase padding for better spacing */
+  font-size: 1.1rem;  /* Make text slightly larger */
 }
 
-.education-table th {
-  background: black;
-  color: white;
-}
-
-.education-table tr:hover {
-  background: #ddd;
-}
 
 /* Skills Section */
 .skills-section {
   text-align: center;
   padding: 50px 20px;
-  background-color: #ffffff;
 }
 
 .skills-title {
   font-size: 2.5rem;
   font-weight: bold;
+  color: var(--text-color);
   margin-bottom: 30px;
-  color: #333;
 }
 
 .skills-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-card {
+  width: 200px;
+  height: 250px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.skill-card:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Tilt effect */
+.skill-card:hover {
+  transform: rotateY(180deg) rotateX(10deg) scale(1.05);
+}
+
+/* Front & Back Styling */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 80%;
-  max-width: 600px;
-  margin: auto;
-}
-
-.skill {
-  width: 100%;
-  text-align: left;
-}
-
-.skill-name {
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-front {
+  color: white;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.card-front svg {
+  font-size: 3rem;
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
+}
+
+.card-back {
+  background-color: #222;
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Glow Effect */
+.card-front:hover {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Theme Support */
+body.light .skills-title {
+  color: #222;
+}
+
+body.dark .skills-title {
+  color: #fff;
+}
+
+body.light .card-back {
+  background-color: #f8f8f8;
   color: #333;
 }
 
-.skill-bar {
-  height: 20px;
-  background: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.skill-fill {
-  height: 100%;
-  width: 0;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding-right: 10px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  transition: width 1.5s ease-in-out;
-}
-
-.skill-percentage {
-  font-size: 0.9rem;
-}
-
-/* Responsive Skills Section */
+/* Responsive Design */
 @media (max-width: 768px) {
   .skills-container {
-    width: 90%;
+    flex-direction: column;
+    align-items: center;
   }
 }

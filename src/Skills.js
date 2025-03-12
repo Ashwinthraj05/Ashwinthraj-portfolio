@@ -1,32 +1,33 @@
 import React from "react";
-import "./Skills.js";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import "./App.css";
 
 const skills = [
-  { name: "HTML", percentage: 90, color: "#E44D26" },
-  { name: "CSS", percentage: 85, color: "#1572B6" },
-  { name: "JavaScript", percentage: 80, color: "#F7DF1E" },
-  { name: "React.js", percentage: 75, color: "#61DAFB" },
-  { name: "Node.js", percentage: 70, color: "#339933" },
-  { name: "MongoDB", percentage: 65, color: "#4DB33D" },
+  { name: "HTML", icon: <FaHtml5 />, color: "#E44D26", desc: "Markup language for structuring web pages." },
+  { name: "CSS", icon: <FaCss3Alt />, color: "#1572B6", desc: "Styles web pages with colors, layouts, and animations." },
+  { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E", desc: "Programming language for web interactivity." },
+  { name: "React.js", icon: <FaReact />, color: "#61DAFB", desc: "Library for building dynamic user interfaces." },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#339933", desc: "JavaScript runtime for backend development." },
+  { name: "MongoDB", icon: <FaDatabase />, color: "#4DB33D", desc: "NoSQL database for scalable applications." },
 ];
 
-function Skills() {
+const Skills = () => {
   return (
     <section id="skills" className="skills-section">
       <h2 className="skills-title">My Skills</h2>
       <div className="skills-container">
         {skills.map((skill, index) => (
-          <div key={index} className="skill">
-            <h3 className="skill-name">{skill.name}</h3>
-            <div className="skill-bar">
-              <div
-                className="skill-fill"
-                style={{
-                  width: `${skill.percentage}%`,
-                  backgroundColor: skill.color,
-                }}
-              >
-                <span className="skill-percentage">{skill.percentage}%</span>
+          <div key={index} className="skill-card">
+            <div className="card-inner">
+              {/* Front Side */}
+              <div className="card-front" style={{ backgroundColor: skill.color }}>
+                {skill.icon}
+                <h3>{skill.name}</h3>
+              </div>
+
+              {/* Back Side */}
+              <div className="card-back">
+                <p>{skill.desc}</p>
               </div>
             </div>
           </div>
@@ -34,6 +35,6 @@ function Skills() {
       </div>
     </section>
   );
-}
+};
 
 export default Skills;

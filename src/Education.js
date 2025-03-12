@@ -4,7 +4,7 @@ import './App.css';
 function Education() {
   return (
     <section id="education" className="education-section">
-      <h2 className="title">Education</h2>
+      <h2 className="title"><center>Education</center></h2>
       
       <table className="education-table">
         <thead>

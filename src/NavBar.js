@@ -1,47 +1,68 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import { FaHome, FaEnvelope, FaInstagram, FaGithub , FaToolbox} from "react-icons/fa";
-import { FaInfoCircle, FaUser } from "react-icons/fa";
+import { FaHome, FaEnvelope, FaInstagram, FaGithub, FaToolbox, FaMoon, FaSun } from "react-icons/fa";
 import "./App.css";
 
-function NavBar() {
+const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className="navbar">
-      <div className="logo"> SG Ashwinth</div> {/* Name without icon */}
-      <ul className="nav-links">
-        <li>
-          <a href="/" className="nav-item">
-            <FaHome  /> 
-          </a>
-        </li>
-        <li>
-  <Link to="/about" className="nav-item"><FaToolbox/></Link>
-</li>
-        <li>
-          <Link to="https://www.instagram.com/x..ashwinthz..x?igsh=MXRnZ3gxcHlwYWhzbw==" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             className="nav-item">
-            <FaInstagram className="icon" /> 
-          </Link>
-        </li>
-        <li>
-          <Link to="https://github.com/Ashwinthraj05" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             className="nav-item">
-            <FaGithub className="icon" /> 
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" className="nav-item">
-            <FaEnvelope className="icon" /> 
-          </Link>
-        </li>
-      </ul>
+      {/* Left Side - Name */}
+      <div className="logo">Ashwinth</div>
+
+      {/* Right Side - Navigation Links */}
+      <div className="nav-container">
+        <ul className="nav-links">
+          <li>
+            <Link to="/" className="nav-item" data-tooltip="Home">
+              <FaHome />
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="nav-item" data-tooltip="About">
+              <FaToolbox />
+            </Link>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/x..ashwinthz..x?igsh=MXRnZ3gxcHlwYWhzbw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-item"
+              data-tooltip="Instagram"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Ashwinthraj05"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-item"
+              data-tooltip="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </li>
+          <li>
+            <Link to="/contact" className="nav-item" data-tooltip="Contact">
+              <FaEnvelope />
+            </Link>
+          </li>
+          {/* Theme Toggle Icon */}
+          <li>
+            <div
+              className="theme-toggle"
+              onClick={toggleTheme}
+              data-tooltip={theme === "dark" ? "Light Mode" : "Dark Mode"}
+            >
+              {theme === "dark" ? <FaSun /> : <FaMoon />}
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
-}
+};
 
-export default NavBar;
+export default Navbar;
