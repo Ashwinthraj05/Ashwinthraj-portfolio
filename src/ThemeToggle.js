@@ -3,7 +3,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
   return (
-    <button className="theme-toggle-btn" onClick={toggleTheme}>
+     <button className="theme-toggle-btn" onClick={toggleTheme}>
       {theme === "dark" ? <FaSun /> : <FaMoon />}
     </button>
   );

@@ -6,10 +6,6 @@ import "./App.css";
 const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className="navbar">
-      {/* Left Side - Name */}
-      <div className="logo">Ashwinth</div>
-
-      {/* Right Side - Navigation Links */}
       <div className="nav-container">
         <ul className="nav-links">
           <li>
@@ -49,7 +45,6 @@ const Navbar = ({ theme, toggleTheme }) => {
               <FaEnvelope />
             </Link>
           </li>
-          {/* Theme Toggle Icon */}
           <li>
             <div
               className="theme-toggle"

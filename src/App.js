@@ -8,7 +8,7 @@ import About from "./About.js";
 import Education from "./Education.js";
 import Skills from "./Skills";
 import ThemeToggle from "./ThemeToggle"; 
-import profileImage from "./assets/Portfolio6.jpg"; // Replace with actual image path
+import profileImage from "./assets/Userlogo.jpg"; // Replace with actual image path
 
 function App() {
   
@@ -47,7 +47,7 @@ function App() {
       animate={{ textShadow: "none", opacity: 1, y: 0 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
     >
-      Hey, I'M
+     Hey, I'M
     </motion.h2>
 
     <motion.h1
