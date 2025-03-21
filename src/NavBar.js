@@ -1,12 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaEnvelope, FaInstagram, FaGithub, FaToolbox, FaMoon, FaSun } from "react-icons/fa";
+import {
+  FaHome,
+  FaEnvelope,
+  FaInstagram,
+  FaGithub,
+  FaToolbox,
+  FaMoon,
+  FaSun,
+  FaLinkedin
+} from "react-icons/fa";
 import "./App.css";
 
 const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className="navbar">
       <div className="nav-container">
+        {/* Left Side - Portfolio Title */}
+        {/* <div className="nav-title">Portfolio</div> */}
+
+        {/* Right Side - Nav Items */}
         <ul className="nav-links">
           <li>
             <Link to="/" className="nav-item" data-tooltip="Home">
@@ -41,6 +54,17 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           </li>
           <li>
+            <a
+              href="https://www.linkedin.com/in/ashwinthraj-s-g-88b173252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-item"
+              data-tooltip="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </li>
+          <li>
             <Link to="/contact" className="nav-item" data-tooltip="Contact">
               <FaEnvelope />
             </Link>
@@ -50,6 +74,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               className="theme-toggle"
               onClick={toggleTheme}
               data-tooltip={theme === "dark" ? "Light Mode" : "Dark Mode"}
+              style={{ cursor: "pointer" }}
             >
               {theme === "dark" ? <FaSun /> : <FaMoon />}
             </div>

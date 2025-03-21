@@ -1,34 +1,34 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { motion } from "framer-motion";
+import "./App.css";
 
-function Education() {
+const educationData = [
+  { year: "2022 - Present", degree: "B.E CSE", institution: "Angel College Of Engineering And Technology" },
+  { year: "2020 - 2022", degree: "Higher Secondary", institution: "Lions Matriculation And Higher Secondary School" },
+  { year: "2019 - 2020", degree: "Secondary School", institution: "Sakthi Matriculation School" },
+];
+
+const Education = () => {
   return (
-    <section id="education" className="education-section">
-      <h2 className="title"><center>Education</center></h2>
-      
-      <table className="education-table">
-        <thead>
-          <tr>
-            <th>Degree</th>
-            <th>Institution</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>B.Tech in Computer Science</td>
-            <td>Anna University</td>
-            <td>2022 - 2026</td>
-          </tr>
-          <tr>
-            <td>High School</td>
-            <td>ABC Senior Secondary School</td>
-            <td>2020 - 2022</td>
-          </tr>
-        </tbody>
-      </table>
+    <section className="education-section">
+      <h2 className="title">Education</h2>
+      <div className="card-container">
+        {educationData.map((edu, index) => (
+          <motion.div
+            key={index}
+            className="card"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.4, delay: index * 0.2 }}
+          >
+            <h3>{edu.degree}</h3>
+            <p>{edu.institution}</p>
+            <span className="year">{edu.year}</span>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
-}
+};
 
 export default Education;
