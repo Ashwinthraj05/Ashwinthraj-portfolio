@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import profileImage from "./assets/Userlogo.jpg"; // Ensure correct image path
+import profileImage from "../assets/Userlogo.jpg"; // Ensure correct image path
 
 const MainContent = () => {
   return (

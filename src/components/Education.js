@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./App.css";
+import "../App.css";
 
 const educationData = [
   { year: "2022 - Present", degree: "B.E CSE", institution: "Angel College Of Engineering And Technology" },

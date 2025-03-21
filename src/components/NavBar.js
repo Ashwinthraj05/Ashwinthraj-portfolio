@@ -10,7 +10,7 @@ import {
   FaSun,
   FaLinkedin
 } from "react-icons/fa";
-import "./App.css";
+import "../App.css";
 
 const Navbar = ({ theme, toggleTheme }) => {
   return (
