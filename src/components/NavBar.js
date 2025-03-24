@@ -1,81 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  FaHome,
-  FaEnvelope,
-  FaInstagram,
-  FaGithub,
-  FaToolbox,
-  FaMoon,
-  FaSun,
-  FaLinkedin
-} from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import { FaHome, FaWrench, FaProjectDiagram, FaGraduationCap, FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import "../App.css";
 
 const Navbar = ({ theme, toggleTheme }) => {
+  const [activeSection, setActiveSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "skills", "projects", "education"];
+      let currentSection = "home";
+
+      sections.forEach((section) => {
+        const sectionElement = document.getElementById(section);
+        if (sectionElement) {
+          const rect = sectionElement.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="nav-container">
-        {/* Left Side - Portfolio Title */}
-        {/* <div className="nav-title">Portfolio</div> */}
+        <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-        {/* Right Side - Nav Items */}
-        <ul className="nav-links">
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" className="nav-item" data-tooltip="Home">
+            <Link to="home" smooth={true} duration={500} className={activeSection === "home" ? "active" : ""} data-tooltip="Home">
               <FaHome />
             </Link>
           </li>
           <li>
-            <Link to="/about" className="nav-item" data-tooltip="About">
-              <FaToolbox />
+            <Link to="skills" smooth={true} duration={500} className={activeSection === "skills" ? "active" : ""} data-tooltip="Skills">
+              <FaWrench />
             </Link>
           </li>
           <li>
-            <a
-              href="https://www.instagram.com/x..ashwinthz..x?igsh=MXRnZ3gxcHlwYWhzbw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-item"
-              data-tooltip="Instagram"
-            >
-              <FaInstagram />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Ashwinthraj05"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-item"
-              data-tooltip="GitHub"
-            >
-              <FaGithub />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/ashwinthraj-s-g-88b173252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-item"
-              data-tooltip="LinkedIn"
-            >
-              <FaLinkedin />
-            </a>
-          </li>
-          <li>
-            <Link to="/contact" className="nav-item" data-tooltip="Contact">
-              <FaEnvelope />
+            <Link to="projects" smooth={true} duration={500} className={activeSection === "projects" ? "active" : ""} data-tooltip="Projects">
+              <FaProjectDiagram />
             </Link>
           </li>
           <li>
-            <div
-              className="theme-toggle"
-              onClick={toggleTheme}
-              data-tooltip={theme === "dark" ? "Light Mode" : "Dark Mode"}
-              style={{ cursor: "pointer" }}
-            >
+            <Link to="education" smooth={true} duration={500} className={activeSection === "education" ? "active" : ""} data-tooltip="Education">
+              <FaGraduationCap />
+            </Link>
+          </li>
+          <li>
+            <div className="theme-toggle" onClick={toggleTheme} data-tooltip={theme === "dark" ? "Light Mode" : "Dark Mode"}>
               {theme === "dark" ? <FaSun /> : <FaMoon />}
             </div>
           </li>

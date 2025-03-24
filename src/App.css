@@ -20,32 +20,22 @@ body {
 }
 
 /* Navbar Styling */
+/* Navbar Container */
 .navbar {
-  display: flex;
-  justify-content: space-between; /* Space between Portfolio & Nav items */
-  align-items: center;
-  padding: 15px 5%;
-  background-color: var(--bg-color);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Left Side - Portfolio Title
-.nav-title {
-  margin-right: auto;
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--text-color);
-} */
-
-/* Navigation Links - Moved to Right */
-.nav-container {
-  display: flex;
-  justify-content:center;
-  /* align-items: center; */
-  margin: auto;
+  position: fixed;
+  top: 0;
   width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism Effect */
+  backdrop-filter: blur(10px); /* Blur Effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -54,22 +44,136 @@ body {
   padding: 0;
 }
 
+/* Individual Nav Items */
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
   font-size: 24px;
   display: flex;
   align-items: center;
-  transition: color 0.3s ease;
+  padding: 10px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+/* Hover Effect - Tooltip */
+.nav-links a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1db954;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: none;
+}
+
+.nav-links a:hover::after {
+  display: block;
+}
+
+/* Active Link Highlight */
+.nav-links .active {
   color: #1db954;
+  font-size: 28px;
+  transition: all 0.3s ease-in-out;
+}  
+
+/* Mobile Responsive - Hamburger Menu*/
+ .menu-icon {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
 }
 
-/* LinkedIn Icon Color */
-.nav-links a[data-tooltip="LinkedIn"]:hover {
-  color: #1db954; 
+/* Responsive Design for Mobile */
+/* @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    left: 20px;
+  }
+}  */
+/* Mobile Navbar Fix */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the icons */
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    width: 60%; /* Reduce width */
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Slightly transparent black */
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    color: white;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #1db954;
+  }
+
+  /* Ensure icons are properly spaced */
+  .nav-links li svg {
+    font-size: 28px; /* Bigger icons */
+    margin-bottom: 5px;
+  }
+
+  /* Fix menu icon positioning */
+  .menu-icon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+/* ✅ Theme Toggle Button */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
 }
 
 /* Theme Toggle */
@@ -152,13 +256,22 @@ body {
   text-align: center;
 }
 
-body.dark .about-container {
-  background: #1e1e1e;
+/* Default light mode */
+.about-container {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.about-container h1, .about-container h2 {
-  margin-bottom: 15px;
+/* 🌙 Dark mode fix using data-theme */
+[data-theme="dark"] .about-container {
+  background-color: #1e1e1e !important; /* Same as Education section */
+  color: white !important;
+  border: 1px solid white; /* Optional for better visibility */
 }
+
 
 /* Education Table */
 /* Light & Dark Mode Variables */
@@ -347,8 +460,6 @@ body.dark .about-container {
   --primary-color: #4a90e2;
 }
 
-
-/* Skills Section */
 /* Skills Section */
 .skills-section {
   text-align: center;

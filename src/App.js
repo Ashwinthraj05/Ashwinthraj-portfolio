@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import ThemeToggle from "./components/ThemeToggle";
 import MainContent from "./pages/MainContent";
+import Footer from "./components/Footer"; 
 
 function AppContent() {
   const { theme, toggleTheme } = useTheme(); // Use ThemeContext
@@ -22,8 +23,7 @@ function AppContent() {
         <Route path="/projects" element={<Projects />} />
 
       </Routes>
-      <Education />
-      <Skills />
+      <div id="skills"><Skills /></div>
       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
     </Router>
     
@@ -37,8 +37,11 @@ function App() {
       <AppContent />
     </ThemeProvider>
     <div>
-      <Projects />
+    <div id="projects"><Projects /></div>
     </div>
+    <div id="education"><Education /></div>
+
+    <Footer />
     </>
   );
 }
