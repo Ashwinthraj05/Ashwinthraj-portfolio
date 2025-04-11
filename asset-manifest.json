@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/Ashwinthraj-portfolio/static/css/main.a01ab3dd.css",
-    "main.js": "/Ashwinthraj-portfolio/static/js/main.c9433145.js",
+    "main.css": "/Ashwinthraj-portfolio/static/css/main.13ada19e.css",
+    "main.js": "/Ashwinthraj-portfolio/static/js/main.a294c191.js",
     "static/js/453.c4b388e4.chunk.js": "/Ashwinthraj-portfolio/static/js/453.c4b388e4.chunk.js",
     "static/media/Userlogo.jpg": "/Ashwinthraj-portfolio/static/media/Userlogo.ab804fd2e8660066b2b3.jpg",
+    "static/media/Web App.jpg": "/Ashwinthraj-portfolio/static/media/Web App.b984912711721dc355c3.jpg",
+    "static/media/Material_design.jpg": "/Ashwinthraj-portfolio/static/media/Material_design.2783bb3e0594acfa95c7.jpg",
     "index.html": "/Ashwinthraj-portfolio/index.html",
-    "main.a01ab3dd.css.map": "/Ashwinthraj-portfolio/static/css/main.a01ab3dd.css.map",
-    "main.c9433145.js.map": "/Ashwinthraj-portfolio/static/js/main.c9433145.js.map",
+    "main.13ada19e.css.map": "/Ashwinthraj-portfolio/static/css/main.13ada19e.css.map",
+    "main.a294c191.js.map": "/Ashwinthraj-portfolio/static/js/main.a294c191.js.map",
     "453.c4b388e4.chunk.js.map": "/Ashwinthraj-portfolio/static/js/453.c4b388e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a01ab3dd.css",
-    "static/js/main.c9433145.js"
+    "static/css/main.13ada19e.css",
+    "static/js/main.a294c191.js"
   ]
 }
