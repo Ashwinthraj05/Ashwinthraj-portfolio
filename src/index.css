@@ -1,0 +1,7 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto} /* Lenis handles scroll */
+body{margin:0;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+::selection{background:rgba(0,255,136,0.2);color:var(--text)}
